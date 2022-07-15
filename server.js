@@ -44,7 +44,7 @@ mongoose.connect(URI, {
 }, err => {
     if(err) throw err;
     console.log(
-        `Trainable database connected.`.green.bold
+        `myKeys database connected.`.green.bold
       );
 })
 
@@ -59,5 +59,5 @@ if(process.env.NODE_ENV === 'production'){
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     console.log(
-        `Trainable Server connected at: ${PORT}`.blue.bold);
+        `myKeys Server connected at: ${PORT}`.blue.bold);
 })
