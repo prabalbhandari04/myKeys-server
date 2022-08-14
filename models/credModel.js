@@ -7,6 +7,11 @@ const ObjectId = Schema.ObjectId;
 
 
 const credSchema = new mongoose.Schema({
+    user:{
+		type:ObjectId,
+		ref:'Users',
+		required:true
+	},
     title:{
         type: String,
         required: [true, "Please enter a title!"],

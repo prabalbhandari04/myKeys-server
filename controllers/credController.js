@@ -18,9 +18,10 @@ const userCtrl = {
     // register user controller using name, email, password
     addCred: async (req, res) => {
         try {
+            const {id} = req.params;
             const {title, url, key} = req.body
             const newCred = new Creds({
-                title, url, key
+                title, url, key , user : id
             })
             await newCred.save()
             res.json({msg: "Credential added successfully."})
@@ -32,7 +33,7 @@ const userCtrl = {
     getCred: async (req, res) => {
         try {
             const id = req.params.id
-            const creds = await Creds.findById(id)
+            const creds = await Creds.find({user:id})
             res.json(creds)
         } catch (err) {
             return res.status(500).json({msg: err.message})
