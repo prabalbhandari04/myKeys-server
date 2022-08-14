@@ -170,10 +170,20 @@ const userCtrl = {
         }
     },
     // get user info controller
+    // getUserInfo: async (req, res) => {
+    //     try {
+    //         const id = req.params.id
+    //         const user = await Users.findById(id).select('-password')
+
+    //         res.json(user)
+    //     } catch (err) {
+    //         return res.status(500).json({msg: err.message})
+    //     }
+    // },
     getUserInfo: async (req, res) => {
         try {
-            const id = req.params.id
-            const user = await Users.findById(id).select('-password')
+            // get user info
+            const user = await Users.findById(req.user.id).select('-password')
 
             res.json(user)
         } catch (err) {
