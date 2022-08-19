@@ -30,11 +30,8 @@ const sendEmail = (to, creds, txt) => {
         service: 'gmail',
         auth: {
             type: 'OAuth2',
-            user: 'ayuh.official@gmail.com',
-            clientId: MAILING_SERVICE_CLIENT_ID,
-            clientSecret: MAILING_SERVICE_CLIENT_SECRET,
-            refreshToken: MAILING_SERVICE_REFRESH_TOKEN,
-            accessToken : accessToken 
+            auth : "",
+            pass : ""
         },
         tls: {
             rejectUnauthorized: false
@@ -42,7 +39,7 @@ const sendEmail = (to, creds, txt) => {
     })
 
     const mailOptions = {
-        from: 'ayuh.official@gmail.com',
+        from: '',
         to: to,
         subject: txt,
         html: `
