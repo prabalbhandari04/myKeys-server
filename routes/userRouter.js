@@ -19,7 +19,7 @@ router.post('/forgot', userCtrl.forgotPassword)
 // user forgot password reset route
 router.post('/reset',auth, userCtrl.resetPassword)
 
-router.get("/info", userCtrl.getUserInfo)
+router.get("/info", auth ,userCtrl.getUserInfo)
 
 // user all info 
 router.get('/all', userCtrl.getUsersAllInfo)
